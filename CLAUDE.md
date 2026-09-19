@@ -180,6 +180,9 @@ public/
 storage/
   results.sqlite
 tests/
+docs/
+  next-steps.md        open experiments: how to run each, cost, how to read the result
+NOTES.md               every prompt version tried, results, costs
 ```
 
 ### Board

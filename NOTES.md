@@ -285,7 +285,7 @@ From the stored token counts: 31,247 benchmark requests (21.97 million tokens, $
 
 ### Not done
 
-Nothing here changes a published number. They are the open questions, roughly in order of how interesting the answer would be.
+Nothing here changes a published number. They are the open questions, roughly in order of how interesting the answer would be. [docs/next-steps.md](docs/next-steps.md) has the how, the cost and what each result would mean.
 
 - **Column-first board.** Rows are read far better than columns when choosing a move (blocks: 90% rows, 71% columns under `v2-priority`), yet asked directly it sees both at 99%. Writing the board or the lines column-first would show whether that is text order or something else. If rows and columns swap, it is layout.
 - **Shuffled option order.** The move options were always listed in reading order, so the symmetry figures mix board understanding with option-position bias. The runner supports it: `--shuffle-seed=1`. About $0.15 for `lines` on every position.

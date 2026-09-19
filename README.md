@@ -4,7 +4,7 @@ A playable game of noughts and crosses (tic-tac-toe) where the opponent is [Type
 
 Tic-tac-toe is solved, so every answer has an exact right or wrong. That makes it a handy way to see what changes a model's decisions: how the board is described, how the question is worded, and what extra information it is given.
 
-This is a weekend experiment, not an authoritative evaluation. One model version (`jev-1.13.0`), one game, mostly one sample per position. The working notes, including everything that did not pan out, are in [NOTES.md](NOTES.md).
+This is a weekend experiment, not an authoritative evaluation. One model version (`jev-1.13.0`), one game, mostly one sample per position. The working notes, including everything that did not pan out, are in [NOTES.md](NOTES.md), and the experiments not yet run are in [docs/next-steps.md](docs/next-steps.md).
 
 ## What we found
 
