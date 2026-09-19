@@ -285,9 +285,16 @@ From the stored token counts: 31,247 benchmark requests (21.97 million tokens, $
 
 ### Not done
 
-- Repeats were only run for `lines` + `v2-priority` on 300 positions. Differences under about 2 points should still not be read into.
-- No shuffled-option-order run. The runner supports it: `--shuffle-seed=1`.
-- The v2 arms have only been run on dev. Whichever is chosen needs a test-split run before it is quoted next to v1's test numbers.
+Nothing here changes a published number. They are the open questions, roughly in order of how interesting the answer would be.
+
+- **Column-first board.** Rows are read far better than columns when choosing a move (blocks: 90% rows, 71% columns under `v2-priority`), yet asked directly it sees both at 99%. Writing the board or the lines column-first would show whether that is text order or something else. If rows and columns swap, it is layout.
+- **Shuffled option order.** The move options were always listed in reading order, so the symmetry figures mix board understanding with option-position bias. The runner supports it: `--shuffle-seed=1`. About $0.15 for `lines` on every position.
+- **A two-step design that only trusts confident answers.** `v2-chain-jev` cut its own answers at 0.5 and was hurt by wrong "cannot win" hints. The repeatability result says picks and answers above about 0.6 are solid. Feeding back only confident answers, or letting code take the win or block directly when the yes/no answer is confident, is the obvious next version. Tune on dev.
+- **Tighter wording for the two-in-a-line judgement.** 37% false alarms when the opponent holds the third cell. A `criteria` with explicit true and false descriptions, or splitting it into two questions, might fix it, and that would lift the look-ahead player too.
+- **Annotated options.** Code describes each empty cell ("completes row_1 for X", "blocks col_2"). Expected to be near perfect. It is the far end of "how much must code do", so worth one run for the chart.
+- **`v2-priority` on the test split for `grid`, `cells` and `rules`.** Only `lines` was confirmed on test. The others are dev-only numbers.
+- **Repeats on more than 300 positions and on v1**, to put error bars on the headline table. Differences under about 2 points should still not be read into.
+- **A newer Jev version when one ships.** Everything is pinned to `jev-1.13.0` and stored per model, so a rerun is a one-line change and about $1.10.
 
 ### Screenshot candidates
 
