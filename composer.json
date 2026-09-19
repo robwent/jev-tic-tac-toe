@@ -1,0 +1,31 @@
+{
+    "name": "robertwent/jev-tic-tac-toe",
+    "description": "Tic-tac-toe against TypeSafe's Jev model, benchmarked against a minimax solver.",
+    "type": "project",
+    "license": "proprietary",
+    "require": {
+        "php": "^8.4",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "ext-pdo_sqlite": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^11.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "JevTtt\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "JevTtt\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "config": {
+        "sort-packages": true
+    }
+}

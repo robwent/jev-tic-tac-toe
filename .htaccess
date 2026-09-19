@@ -1,0 +1,12 @@
+# Safety net for servers whose document root is this folder rather than
+# public/. Send every request into public/ so .env, storage/, vendor/ and src/ are never reachable over HTTP.
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_URI} !^/public/
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
+
+# If mod_rewrite is missing, fail closed instead of serving the root.
+<IfModule !mod_rewrite.c>
+    Require all denied
+</IfModule>

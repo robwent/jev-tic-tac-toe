@@ -1,0 +1,9 @@
+.env
+/storage/
+/vendor/
+/.phpunit.cache/
+.phpunit.result.cache
+/public/assets/
+/public/index.html
+node_modules/
+CLAUDE.local.md
