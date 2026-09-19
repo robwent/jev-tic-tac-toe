@@ -1,9 +1,29 @@
+# Secrets and local configuration
 .env
+.env.*
+!.env.example
+CLAUDE.local.md
+.claude/settings.local.json
+
+# Benchmark database, raw API responses, rate-limit state, logs
 /storage/
+*.log
+
+# Dependencies
 /vendor/
-/.phpunit.cache/
-.phpunit.result.cache
+node_modules/
+
+# Build output (run `pnpm build` in frontend/)
 /public/assets/
 /public/index.html
-node_modules/
-CLAUDE.local.md
+
+# Tool caches
+/.phpunit.cache/
+.phpunit.result.cache
+
+# Editors and operating systems
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
